@@ -573,7 +573,6 @@ func (g *CosmosGateway) Handle(data []byte) (interface{}, error) {
 				return g.faucet(req)
 			})
 		}
-	}
 
 	case "/tendermint":
 		{
