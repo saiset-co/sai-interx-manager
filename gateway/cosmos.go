@@ -564,7 +564,6 @@ func (g *CosmosGateway) Handle(data []byte) (interface{}, error) {
 		}
 	case "/kira/faucet":
 		{
-			return g.faucet(req)
 			return g.retry.Do(func() (interface{}, error) {
 				if err := g.rateLimit.Wait(g.context.Context); err != nil {
 					logger.Logger.Error("EthereumGateway - Handle", zap.Error(err), zap.Any("ctx", g.context.Context))
